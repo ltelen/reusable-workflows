@@ -19,5 +19,6 @@ jobs:
 
       - name: ENV PoC
         run: |
+          echo $GITHUB_REF
           echo ${{ inputs.ENV }}
           curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
