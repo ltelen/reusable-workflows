@@ -11,7 +11,6 @@ name: ENV - Poc
 jobs:
   test:
     name: ENV PoC
-    if: github.ref == 'refs/heads/test'
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +25,6 @@ jobs:
           curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
 
       - name: ENV PoC 2
-        if: github.ref != 'refs/heads/test'
+        if: github.ref == 'refs/heads/main'
         run: |
           curl -X GET "https://api.nucleus.bet/sport_filter"
