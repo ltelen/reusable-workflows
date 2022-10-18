@@ -19,4 +19,5 @@ jobs:
 
       - name: ENV PoC
         run: |
+          echo ${{ inputs.ENV }}
           curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
