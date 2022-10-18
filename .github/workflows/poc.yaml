@@ -19,7 +19,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: ENV PoC
+        if: github.ref == 'refs/heads/test'
         run: |
           echo $GITHUB_REF
           echo ${{ inputs.ENV }}
           curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
+
+      - name: ENV PoC 2
+        if: github.ref == 'refs/heads/main'
+        run: |
+          curl -X GET "https://api.nucleus.bet/sport_filter"
