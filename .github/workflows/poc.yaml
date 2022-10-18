@@ -26,6 +26,6 @@ jobs:
           curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
 
       - name: ENV PoC 2
-        if: github.ref == 'refs/heads/main'
+        if: github.ref != 'refs/heads/test'
         run: |
           curl -X GET "https://api.nucleus.bet/sport_filter"
