@@ -1,0 +1,22 @@
+on:
+  workflow_call:
+    inputs:
+      ENV:
+        type: string
+        description: Environment code
+        required: false
+
+name: ENV - Poc
+
+jobs:
+  test:
+    name: ENV PoC
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: ENV PoC
+        run: |
+          curl -X GET "https://api.nucleus.bet/${{ inputs.ENV }}"
