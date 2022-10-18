@@ -11,7 +11,7 @@ name: ENV - Poc
 jobs:
   test:
     name: ENV PoC
-    if: $GITHUB_REF == 'refs/heads/test'
+    if: github.ref == 'refs/heads/test'
     runs-on: ubuntu-latest
 
     steps:
